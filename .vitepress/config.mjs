@@ -4,6 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "common-frontend-code",
   description: "前端常用代码库",
+  base: '/common-frontend-code-doc/',
   head: [
     ['link', { rel: 'icon', type: 'image/svg', href: '/logo.svg' }]
   ],
