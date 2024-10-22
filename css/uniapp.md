@@ -19,6 +19,18 @@
   font-size: 38rpx;
 }
 
+.fs-36 {
+  font-size: 36rpx;
+}
+
+.fs-32 {
+  font-size: 32rpx;
+}
+
+.fs-30 {
+  font-size: 30rpx;
+}
+
 .fs-28 {
   font-size: 28rpx;
 }
@@ -132,6 +144,37 @@
 
 .p-16 {
   padding: 16rpx;
+}
+
+/* 14rpx  */
+.p-t-14 {
+  padding-top: 14rpx;
+}
+
+.p-b-14 {
+  padding-bottom: 14rpx;
+}
+
+.p-l-14 {
+  padding-left: 14rpx;
+}
+
+.p-r-14 {
+  padding-right: 14rpx;
+}
+
+.px-14 {
+  padding-left: 14rpx;
+  padding-right: 14rpx;
+}
+
+.py-14 {
+  padding-top: 14rpx;
+  padding-bottom: 14rpx;
+}
+
+.p-14 {
+  padding: 14rpx;
 }
 
 /* 12rpx  */
@@ -263,35 +306,35 @@
   margin: 16rpx;
 }
 
-/* 24rpx */
-.m-t-24 {
-  margin-top: 24rpx;
+/* 14rpx */
+.m-t-14 {
+  margin-top: 14rpx;
 }
 
-.m-b-24 {
-  margin-bottom: 24rpx;
+.m-b-14 {
+  margin-bottom: 14rpx;
 }
 
-.m-l-24 {
-  margin-left: 24rpx;
+.m-l-14 {
+  margin-left: 14rpx;
 }
 
-.m-r-24 {
-  margin-right: 24rpx;
+.m-r-14 {
+  margin-right: 14rpx;
 }
 
-.mx-24 {
-  margin-left: 24rpx;
-  margin-right: 24rpx;
+.mx-14 {
+  margin-left: 14rpx;
+  margin-right: 14rpx;
 }
 
-.my-24 {
-  margin-top: 24rpx;
-  margin-bottom: 24rpx;
+.my-14 {
+  margin-top: 14rpx;
+  margin-bottom: 14rpx;
 }
 
-.m-24 {
-  margin: 24rpx;
+.m-14 {
+  margin: 14rpx;
 }
 
 /* 12rpx  */
