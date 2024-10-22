@@ -5,8 +5,9 @@ export default defineConfig({
   title: "common-frontend-code",
   description: "前端常用代码库",
   base: '/common-frontend-code-doc/',
+  srcDir: 'src',
   head: [
-    ['link', { rel: 'icon', type: 'image/svg', href: '/logo.svg' }]
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: `/common-frontend-code-doc/logo.svg` }]
   ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
