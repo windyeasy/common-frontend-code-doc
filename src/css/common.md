@@ -104,6 +104,12 @@
  display: flex;
 }
 
+.d-c-s {
+ display: flex;
+ justify-content: center;
+ align-items: flex-start;
+}
+
 /* 水平垂直居中 */
 .d-c-c {
  display: flex;
