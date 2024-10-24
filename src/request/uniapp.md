@@ -400,3 +400,75 @@ export type WdUploadFileOptions = UniApp.UploadFileOption & {
   interceptor?: IInterceptor
 }
 ```
+
+## 使用
+
+- 创建实例
+
+```typescript
+import WdRequest from './request'
+
+const request = new WdRequest({
+  baseURL: 'https://api',
+  timeout: 10000,
+  interceptor: {
+    // 请求拦截器，可以在请求发送前对config进行修改，比如添加token等
+    requestSuccessFn: (config) => {
+      // 判断token是否存在
+      const token = uni.getStorageSync('token')
+      if(token){
+        config.header.Authorization = token
+      }
+      return config
+    },
+    /**
+     * 1. 响应拦截器，因为请求成功后，有两data层，这里进行一层过滤，使用更简洁
+     * 2. 响应拦截器，对请求失败的情况进行拦截，比如token过期，跳转到登录页
+     * 3. 拦截code壮态码，不正确通promise.reject抛出异常，在使用时就可以不用单独判断code壮态码了
+     */ 
+    responseSuccessFn: (res) => {
+      if(res.data.code === 401) {
+        uni.removeStorageSync('token')
+        uni.navigateTo({url: "/pages/login/login"})
+        return Promise.reject(res)
+      }
+      if(res.data.code !== 200) {
+        return Promise.reject(res)
+      }
+      return res.data
+    },
+  }
+})
+
+export default request
+```
+
+- 使用
+
+```typescript
+import request from "./index"
+
+/**
+ * get请求基本使用，ts支持泛型，可以返回指定类型
+ * @param query get请求参数 
+ */ 
+export function getHomeInfos(query: Record<String, any>){
+  return request.get<{list: any[]}>('/home/infos', query)
+}
+
+/**
+ * post请求基本使用
+ */ 
+export function addUser(userInfo: {name: string, age: number}){
+  return request.post<{code: number, msg: string}>('/home/infos', userInfo)
+}
+
+// 上传文件
+export function uploadFile(filePath: string){
+  return request.uploadFile<{code: number, msg: string}>({
+    url: '/upload',
+    filePath,
+    name: 'file'
+  })
+} 
+```
