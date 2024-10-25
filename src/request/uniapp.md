@@ -62,7 +62,6 @@ class WdRequest {
       uni.request({
         timeout: this.config.timeout, // 延迟时间
         dataType: "json",
-        responseType: "json",
         url: config.url,
         ...config,
         success: (res) => {
@@ -239,7 +238,6 @@ class WdRequest {
       uni.request({
         timeout: this.config.timeout, // 延迟时间
         dataType: 'json',
-        responseType: 'json',
         url: config.url as string,
         ...config,
         success: (res: any) => {
