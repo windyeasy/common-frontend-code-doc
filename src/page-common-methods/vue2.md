@@ -1,0 +1,1 @@
+# common-methods vue2

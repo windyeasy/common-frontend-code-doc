@@ -42,7 +42,13 @@ export default defineConfig({
           { text: 'uniapp', link: '/utils/uniapp' },
         ]
       },
-
+      {
+        text: 'page-common-methods',
+        items: [
+          { text: 'vue2', link: '/page-common-methods/vue2' },
+          { text: 'vue3', link: '/page-common-methods/vue3' },
+        ]
+      },
     ],
 
     socialLinks: [
